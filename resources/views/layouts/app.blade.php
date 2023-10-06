@@ -15,7 +15,7 @@
     <!-- Replace with Tailwind CSS font imports if needed -->
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
