@@ -1,29 +1,18 @@
+<script setup>
+import { Dropdown, ListGroup, ListGroupItem } from 'flowbite-vue'
+</script>
 <template>
-  <li class="relative" @click="toggleDropdown">
-    <a
-      id="navbarDropdown"
-      class="text-gray-600 hover:text-gray-900 cursor-pointer"
-      role="button"
-    >
-      {{ user.name }}
-    </a>
 
-    <div
-      v-if="isDropdownOpen"
-      class="absolute right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-md"
-    >
-      <a
-        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
-        href="#"
-        @click.prevent="logout"
-      >
-        {{ __('Logout') }}
-      </a>
-    </div>
-  </li>
+  <dropdown text="Click me" placement="top">
+    <list-group>
+      <list-group-item>Item #1</list-group-item>
+      <list-group-item>Item #2</list-group-item>
+      <list-group-item>Item #3</list-group-item>
+    </list-group>
+  </dropdown>
 </template>
 
-<script>
+<!-- <script>
 export default {
   props: ["user"],
   data() {
@@ -39,5 +28,8 @@ export default {
       document.getElementById('logout-form').submit();
     },
   },
+  mounted() {
+    console.log("user", this.user);
+  },
 };
-</script>
+</script> -->

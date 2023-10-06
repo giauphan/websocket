@@ -62,31 +62,33 @@
                                 </li>
                             @endif
                         @else
-                            <li class="relative">
-                                <a id="navbarDropdown"
-                                    class="text-gray-600 hover:text-gray-900"
-                                    href="#" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    v-pre>
+                            {{-- <li class="relative">
+                                <a id="navbarDropdown" class="text-gray-600 hover:text-gray-900" href="#"
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="absolute right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-md hidden"
                                     aria-labelledby="navbarDropdown">
-                                    <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                                        href="{{ route('logout') }}"
+                                    <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}"
-                                        method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
-                           
+                            </li> --}}
+                            <Drop-down :user="{{ Auth::user() }}">
+                                <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                            </Drop-down>
+
                         @endguest
                     </ul>
                 </div>

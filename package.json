@@ -19,5 +19,9 @@
         "tailwindcss": "^3.3.3",
         "vite": "^4.0.0",
         "vue": "^3.2.37"
+    },
+    "dependencies": {
+        "flowbite": "^1.8.1",
+        "flowbite-vue": "^0.0.17-next.13"
     }
 }

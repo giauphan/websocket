@@ -37,11 +37,10 @@ const app = createApp({
   }
 });
 
-
 app.component('example-component', ExampleComponent);
 app.component('chat-messages', ChatMessages);
 app.component('chat-form', ChatForm);
-app.component('Drop-Down', dropDown);
+app.component('Drop-down', dropDown);
 
 app.mount('#app');
 
