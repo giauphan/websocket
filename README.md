@@ -72,4 +72,4 @@ npm run dev
 
 **Public room**
 
-<img src="docs/images/roomchat.png" alt=" room chat example">
+<img src="doc/images/roomchat.png" alt=" room chat example">
