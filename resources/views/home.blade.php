@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="flex justify-center">
-        <div class="w-8/12">
+        <div class="w-full sm:w-8/12">
             <div class="bg-white shadow-md">
                 <div class="py-4 px-6">{{ __('Dashboard') }}</div>
 
