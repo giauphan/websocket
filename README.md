@@ -62,6 +62,7 @@ php artisan migrate
 
 ```
 php artisan serve
+
 npm run dev
 ```
 10. Access the web app via http://127.0.0.1:8000.
