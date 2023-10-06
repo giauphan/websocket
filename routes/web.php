@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/logout',function(){
+Route::get('/logout', function () {
     Auth::logout();
 })->name('logout');
 
@@ -27,8 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/chat', [App\Http\Controllers\ChatsController::class, 'index']);
 Route::get('/messages', [App\Http\Controllers\ChatsController::class, 'fetchMessages'])->name('chat.post');
-Route::post('/messages', [App\Http\Controllers\ChatsController::class, 'sendMessage'])->middleware('throttle:60,1');;
+Route::post('/messages', [App\Http\Controllers\ChatsController::class, 'sendMessage'])->middleware('throttle:60,1');
 
-Route::get('/te',function(){
+Route::get('/te', function () {
     return view('te');
 });

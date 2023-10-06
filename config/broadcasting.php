@@ -53,7 +53,7 @@ return [
             'key' => env('ABLY_KEY'),
             'disable_public_channels' => env('ABLY_DISABLE_PUBLIC_CHANNELS', false),
             'token_expiry' => env('ABLY_TOKEN_EXPIRY', 3600),
-            'sync_server_time' => env('ABLY_SYNC_SERVER_TIME', false)
+            'sync_server_time' => env('ABLY_SYNC_SERVER_TIME', false),
         ],
 
         'redis' => [
