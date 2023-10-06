@@ -39,10 +39,10 @@ npm i
 ```
 
 5. Create simple sqlite db file.
-   ```
+ ```
   touch database/database.sqlite // On linux
   New-Item database\\database.sqlite -type file // On windows poweshell
-   ```
+ ```
 
 6. Set DB_DATABASE in .env file . 
 ```
