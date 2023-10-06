@@ -1,5 +1,5 @@
 <template>
-  <ul class="chat overflow-scroll h-64">
+  <ul class="chat overflow-auto h-64 w-full ">
     <li class="left clearfix" v-for="message in reversedMessages" :key="message.id">
       <div class="clearfix">
         <div class="header">
@@ -7,7 +7,7 @@
             {{ message.user.name }}
           </strong>
         </div>
-        <p class="mt-2">
+        <p class="mt-2 w-1/2 break-words">
           {{ message.message }}
         </p>
       </div>
