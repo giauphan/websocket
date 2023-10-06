@@ -7,6 +7,7 @@ import ExampleComponent from './components/ExampleComponent.vue';
 import ChatMessages from './components/ChatMessages.vue';
 import ChatForm from './components/ChatForm.vue';
 import dropDown from './components/dropDown.vue';
+import LinkItem from './components/List-GroupItemCustorm.vue';
 const app = createApp({
   data() {
     return {
@@ -37,11 +38,11 @@ const app = createApp({
   }
 });
 
-
 app.component('example-component', ExampleComponent);
 app.component('chat-messages', ChatMessages);
 app.component('chat-form', ChatForm);
-app.component('Drop-Down', dropDown);
+app.component('drop-down', dropDown);
+app.component('link-item', LinkItem);
 
 app.mount('#app');
 
