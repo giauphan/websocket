@@ -7,6 +7,7 @@ use App\Models\Message;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class ChatsController extends Controller
 {
@@ -28,6 +29,15 @@ class ChatsController extends Controller
 
     public function sendMessage(Request $request, $room_id = 1)
     {
+        $validator = Validator::make($request->all(), [
+            'message' => 'required|string',
+        ]);
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => '400',
+                'message' => $validator->errors()->all(),
+            ]);
+        }
         $user = Auth::user();
         if ($user) {
             $message = $user->messages()->create([
