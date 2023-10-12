@@ -34,8 +34,8 @@ class ChatsController extends Controller
         ]);
         if ($validator->fails()) {
             return response()->json([
-                'status'=>'400',
-                'message'=> $validator->errors()->all()
+                'status' => '400',
+                'message' => $validator->errors()->all(),
             ]);
         }
         $user = Auth::user();
