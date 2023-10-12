@@ -1,8 +1,8 @@
-##Chat app using Ably Broadcaster+Echo
+## Chat app using Ably Broadcaster+Echo
 
 Demo web-chat app using Ably Broadcaster+Echo based on laravel.
 
-##Features
+## Features
 
 * Public chat rooms for a guest user.
 * Laravel built-in user authentication (registration + login).
@@ -10,12 +10,12 @@ Demo web-chat app using Ably Broadcaster+Echo based on laravel.
 * Typing indicator for private rooms.
 * Join multiple rooms simultaneously.
 
-##Requirements
+## Requirements
 
 1. PHP version >= 8.0
 2. Node.js >= 18.x.x.
 
-##SETUP
+## SETUP
 
 1. Clone the repository
 ```
