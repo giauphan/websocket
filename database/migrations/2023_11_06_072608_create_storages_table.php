@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('thumbnail_name')->index();
             $table->binary('thumbnail_data');
             $table->string('type');
-            $table->foreignIdFor(User::class,'user_id')->index();
+            $table->foreignIdFor(User::class, 'user_id')->index();
             $table->timestamps();
         });
     }

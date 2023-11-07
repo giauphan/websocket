@@ -23,8 +23,9 @@ class StorageController extends Controller
         //     'user_id'=>1
         // ]);
         $storage = Storage::all();
+
         return view('Storage.storage', [
-            'storage' => $storage
+            'storage' => $storage,
         ]);
     }
 

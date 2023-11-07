@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 use App\Http\Controllers\ImagesController;
@@ -35,4 +36,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/storage', [StorageController::class, 'index'])->name('store');
 
 });
-Route::get('/file/{fileId}', [ImagesController::class,'getFile'])->name('getFile');
+Route::get('/file/{fileId}', [ImagesController::class, 'getFile'])->name('getFile');
