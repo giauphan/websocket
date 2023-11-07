@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Events\MessageSent;
@@ -38,7 +38,7 @@ class ChatsController extends Controller
                 'message' => $validator->errors()->all(),
             ]);
         }
-        $user = Auth::user();
+        $user = $request->user(); 
         if ($user) {
             $message = $user->messages()->create([
                 'message' => $request->input('message'),
