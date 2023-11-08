@@ -46,12 +46,12 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function messages() : BelongsTo
+    public function messages(): BelongsTo
     {
         return $this->belongsTo(Message::class);
     }
 
-    public function store() : BelongsTo
+    public function store(): BelongsTo
     {
         return $this->belongsTo(Storage::class);
     }

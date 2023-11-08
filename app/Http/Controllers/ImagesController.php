@@ -12,7 +12,7 @@ class ImagesController extends Controller
     {
         $storagePath = Storage::query()->findOrFail($fileId);
 
-        if (!$storagePath) {
+        if (! $storagePath) {
             abort(404);
         }
         if ($storagePath->user_id !== $request->user()->id) {
@@ -25,7 +25,7 @@ class ImagesController extends Controller
         $filename = $storagePath->file_name;
 
         $headers = [
-            'Content-Disposition' => 'inline; filename="' . $filename . '"',
+            'Content-Disposition' => 'inline; filename="'.$filename.'"',
         ];
 
         if ($contentType === 'pdf') {

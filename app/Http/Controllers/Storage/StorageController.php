@@ -38,9 +38,10 @@ class StorageController extends Controller
         $storageList = Storage::query()
             ->with(['message', 'user'])
             ->where('user_id', $request->user()->id)
-            ->get();    
+            ->get();
+
         return view('Storage.storage', [
-            'storage' => StorageResource::collection($storageList)
+            'storage' => StorageResource::collection($storageList),
 
         ]);
     }

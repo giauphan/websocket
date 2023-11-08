@@ -11,22 +11,20 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Storage extends Model
 {
-
     protected $guarded = [];
 
     protected $casts = [
-        'file_data' => 'string', 
-        'file_name' => 'string', 
-        'file_type' => 'string', 
+        'file_data' => 'string',
+        'file_name' => 'string',
+        'file_type' => 'string',
     ];
-    
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function  message(): BelongsTo
+    public function message(): BelongsTo
     {
         return $this->belongsTo(Message::class);
     }

@@ -26,7 +26,7 @@ class MessageSent implements ShouldBroadcast
         $this->message = $message;
     }
 
-    public function broadcastOn() : array
+    public function broadcastOn(): array
     {
         return [new Channel('room.'.$this->message->room_id)];
     }

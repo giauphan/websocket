@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Message;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,7 +17,7 @@ return new class extends Migration
             $table->string('file_name')->nullable();
             $table->string('file_type')->nullable();
             $table->binary('file_data');
-            $table->foreignIdFor(User::class,'user_id');
+            $table->foreignIdFor(User::class, 'user_id');
             $table->timestamps();
         });
     }

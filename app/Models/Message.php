@@ -9,16 +9,15 @@ class Message extends Model
 {
     protected $casts = [
         'file_data' => 'string',
-        'message' => 'string'
+        'message' => 'string',
     ];
 
-
-    public function user() :BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function room():BelongsTo
+    public function room(): BelongsTo
     {
         return $this->belongsTo(Room::class);
     }

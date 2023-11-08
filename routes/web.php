@@ -35,9 +35,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/messages', [App\Http\Controllers\ChatsController::class, 'fetchMessages'])->name('chat.post');
     Route::post('/messages', [App\Http\Controllers\ChatsController::class, 'sendMessage'])->middleware('throttle:60,1');
-    
+
     Route::get('/storage', [StorageController::class, 'index'])->name('store');
 
-    Route::get('/file/{fileId}', [ImagesController::class,'getFile'])->name('getFile');
+    Route::get('/file/{fileId}', [ImagesController::class, 'getFile'])->name('getFile');
 });
-

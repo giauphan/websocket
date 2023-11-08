@@ -27,7 +27,7 @@ class Authcontroller extends Controller
         }
         $user = User::where('email', $request->email)->first();
 
-        if (!$user || !Hash::check($request->password, $user->password)) {
+        if (! $user || ! Hash::check($request->password, $user->password)) {
             throw ValidationException::withMessages([
                 'email' => ['The provided credentials are incorrect.'],
             ]);
@@ -41,11 +41,10 @@ class Authcontroller extends Controller
         ]);
     }
 
-
     public function logout(Request $request)
     {
         /** @var \Laravel\Sanctum\PersonalAccessToken $token */
-        $token =  $request->user()->currentAccessToken();
+        $token = $request->user()->currentAccessToken();
         $token->delete();
 
         return response()->json(['message' => 'Logged out.']);
