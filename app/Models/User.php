@@ -3,7 +3,10 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Models\Storage\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -43,8 +46,13 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function messages()
+    public function messages() : BelongsTo
     {
-        return $this->hasMany(Message::class);
+        return $this->belongsTo(Message::class);
+    }
+
+    public function store() : BelongsTo
+    {
+        return $this->belongsTo(Storage::class);
     }
 }

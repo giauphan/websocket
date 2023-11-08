@@ -26,12 +26,7 @@ class MessageSent implements ShouldBroadcast
         $this->message = $message;
     }
 
-    /**
-     * Get the channels the event should broadcast on.
-     *
-     * @return array<int, \Illuminate\Broadcasting\Channel | array
-     */
-    public function broadcastOn()
+    public function broadcastOn() : array
     {
         return [new Channel('room.'.$this->message->room_id)];
     }

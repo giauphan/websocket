@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Message;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('storages', function (Blueprint $table) {
             $table->id();
-            $table->string('thumbnail_name')->index();
-            $table->binary('thumbnail_data');
-            $table->string('type');
-            $table->foreignIdFor(User::class, 'user_id')->index();
+            $table->string('file_name')->nullable();
+            $table->string('file_type')->nullable();
+            $table->binary('file_data');
+            $table->foreignIdFor(User::class,'user_id');
             $table->timestamps();
         });
     }

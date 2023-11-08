@@ -27,13 +27,17 @@ Auth::routes();
 Route::get('/logout', function () {
     Auth::logout();
 })->name('logout');
+
 Route::middleware('auth')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::get('/chat', [App\Http\Controllers\ChatsController::class, 'index']);
+
     Route::get('/messages', [App\Http\Controllers\ChatsController::class, 'fetchMessages'])->name('chat.post');
     Route::post('/messages', [App\Http\Controllers\ChatsController::class, 'sendMessage'])->middleware('throttle:60,1');
+    
     Route::get('/storage', [StorageController::class, 'index'])->name('store');
 
+    Route::get('/file/{fileId}', [ImagesController::class,'getFile'])->name('getFile');
 });
-Route::get('/file/{fileId}', [ImagesController::class, 'getFile'])->name('getFile');
+

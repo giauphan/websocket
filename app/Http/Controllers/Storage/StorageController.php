@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Storage;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\StorageResource;
 use App\Models\Storage\Storage;
 use Illuminate\Http\Request;
 
@@ -13,19 +14,34 @@ class StorageController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         // $base64 = base64_encode(file_get_contents(public_path('/icon/FilePng.svg')));
-        // Storage::query()->create([
-        //     'thumbnail_name' => 'asdasd',
-        //     'thumbnail_data' => $base64 ,
-        //     'type'=>'svg',
-        //     'user_id'=>1
+        // // Store the file in the storage
+        // $storage = Storage::query()->create([
+        //     'file_data' => $base64,
+        //     'file_name' => 'abc',
+        //     'file_type' => 'svg',
+        //     'user_id' => $request->user()->id,
         // ]);
-        $storage = Storage::all();
 
+        // // Create a new message
+        // $message = Message::query()->create([
+        //     'message' => 'asdasd',
+        //     'room_id' => 1,
+        //     'file_data' => route('getFile', [
+        //         'fileId' => $storage->id,
+        //     ]),
+        //     'user_id' => $request->user()->id,
+        // ]);
+
+        $storageList = Storage::query()
+            ->with(['message', 'user'])
+            ->where('user_id', $request->user()->id)
+            ->get();    
         return view('Storage.storage', [
-            'storage' => $storage,
+            'storage' => StorageResource::collection($storageList)
+
         ]);
     }
 
@@ -50,7 +66,6 @@ class StorageController extends Controller
      */
     public function show(string $id)
     {
-        //
     }
 
     /**

@@ -18,14 +18,15 @@ import {
                 <span class="sr-only">Edit</span>
             </TableCell>
         </TableHead>
-        <TableBody>
+        <TableBody class="overflow-x-scroll ">
             <TableRow v-for="storage in storages"> 
-                <TableCell class="flex">
-                    <img  :src="storage ? (storage.thumbnail_data) : ''" alt="" sizes="" srcset="">
-                    {{storage && storage.thumbnail_name }}
+                <TableCell class="flex items-center gap-5 flex-wrap">
+                    {{ storage.file_name }}
+                    <img  :src="storage ? (storage.file_data) : ''" alt="" sizes="" srcset="" class="w-40 h-20">
+                
                 </TableCell>
-                <TableCell> {{storage && storage.type }}</TableCell>
-                <TableCell> {{storage && storage.created_at }}</TableCell>
+                <TableCell> {{ storage.file_type }}</TableCell>
+                <TableCell> {{ storage.created_at }}</TableCell>
                 <TableCell>
                 </TableCell>
             </TableRow>
