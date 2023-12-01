@@ -7,6 +7,7 @@ namespace App\Models;
 use App\Models\Storage\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -46,9 +47,9 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function messages(): BelongsTo
+    public function messages(): HasMany
     {
-        return $this->belongsTo(Message::class);
+        return $this->hasMany(Message::class);
     }
 
     public function store(): BelongsTo

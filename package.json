@@ -8,7 +8,7 @@
     "devDependencies": {
         "@ably/laravel-echo": "*",
         "@popperjs/core": "^2.11.6",
-        "@vitejs/plugin-vue": "^4.0.0",
+        "@vitejs/plugin-vue": "^4.4.1",
         "ably": "^1.2.45",
         "autoprefixer": "^10.4.16",
         "axios": "^1.1.2",
@@ -21,6 +21,7 @@
         "vue": "^3.2.37"
     },
     "dependencies": {
+        "@inertiajs/vue3": "^1.0.14",
         "flowbite": "^1.8.1",
         "flowbite-vue": "^0.0.17",
         "heroicons": "^2.0.18"

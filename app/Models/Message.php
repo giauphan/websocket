@@ -12,6 +12,12 @@ class Message extends Model
         'message' => 'string',
     ];
 
+    protected $fillable = [
+        'file_data',
+        'message' ,
+        'room_id'
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

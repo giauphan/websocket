@@ -9,6 +9,8 @@ import ChatForm from './components/ChatForm.vue';
 import dropDown from './components/dropDown.vue';
 import LinkItem from './components/List-GroupItemCustorm.vue';
 import StorageForm from './components/StorageForm.vue';
+import UploadFile from './components/Upload_File.vue';
+
 const app = createApp({
   data() {
     return {
@@ -44,8 +46,8 @@ app.component('chat-messages', ChatMessages);
 app.component('chat-form', ChatForm);
 app.component('drop-down', dropDown);
 app.component('link-item', LinkItem);
-
 app.component('store-form', StorageForm);
+app.component('upload-file', UploadFile);
 
 app.mount('#app');
 
