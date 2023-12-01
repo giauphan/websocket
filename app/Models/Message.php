@@ -14,8 +14,8 @@ class Message extends Model
 
     protected $fillable = [
         'file_data',
-        'message' ,
-        'room_id'
+        'message',
+        'room_id',
     ];
 
     public function user(): BelongsTo

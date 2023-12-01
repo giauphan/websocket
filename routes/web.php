@@ -5,7 +5,6 @@ declare(strict_types=1);
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\Storage\StorageController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
